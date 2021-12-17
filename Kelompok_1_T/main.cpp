@@ -6,12 +6,10 @@ int main()
 {
     system("clear");
 
-    ListDouble L;
-    adrDLL P;
-    infotype data;
+    List_pengerajin L;
+    adr_pengerajin P;
     bool status;
 
-    createList_1303204141(L);
 
     enum option
     {
@@ -26,29 +24,17 @@ int main()
         switch (userOpt)
         {
         case MENAMBAH:
-            inputData_1303204141(L);
+
             break;
         case MENAMPILKAN:
             cout << "Menampilkan Seluruh Data" << endl << endl;
-            show_1303204141(L);
+
             break;
         case TP:
-            cout << "Inputkan data yang dicari : ";
-            cin >> data;
 
-            status = findString_1303204141(L,data);
-
-            if(status == true)
-            {
-                cout << "Data di temukan" << endl;
-            }else
-            {
-                cout << "Data Tidak di temukan" << endl;
-            }
             break;
         case MENGHAPUS:
-            P = first(L);
-            deleteFirst_1303204141(L,P);
+
             break;
         default:
             cout << "Pilihan Tidak ditemukan !!!" << endl;

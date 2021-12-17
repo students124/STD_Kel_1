@@ -9,7 +9,7 @@ void createList_1303204141(List_pengerajin &L)
 {
     first(L) = NULL;
 }
-elm_furniture createElement_1303204141(string nama)
+adr_furniture createElement_1303204141(string nama)
 {
     adr_furniture P = new elm_furniture;
     info(P).nama = nama;
@@ -18,9 +18,9 @@ elm_furniture createElement_1303204141(string nama)
     return P;
 }
 
-elm_pengerajin createElement_1303204141(string nama, int umur)
+adr_pengerajin createElement_1303204141(string nama, int umur)
 {
-    adr_furniture P = new elm_furniture;
+    adr_pengerajin P = new elm_pengerajin;
     info(P).nama = nama;
     info(P).umur = umur;
     next(P) = NULL;
@@ -66,7 +66,7 @@ void insertLast_1303204141(List_furniture &L, adr_furniture P)
             Q = next(Q);
         }
 
-        next(Q) = P:
+        next(Q) = P;
     }
 }
 
@@ -85,7 +85,7 @@ void insertLast_1303204141(List_pengerajin &L, adr_pengerajin P)
             Q = next(Q);
         }
 
-        next(Q) = P:
+        next(Q) = P;
     }
 }
 
@@ -140,7 +140,7 @@ void deleteLast_1303204141(List_pengerajin &L, adr_pengerajin &P)
         first(L) == NULL;
     }else
     {
-        adr_furniture Q;
+        adr_pengerajin Q;
         Q = first(L);
 
         while (next(Q) != NULL)

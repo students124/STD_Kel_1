@@ -20,24 +20,3 @@ int getOption_1303204141()
     return hasil;
 }
 
-void inputData_1303204141(ListDouble &L)
-{
-    adrDLL P;
-    int i,j;
-    infotype data;
-
-    cout << "Banyaknya N data yang diinginkan : ";
-    cin >> i;
-
-    j = 1;
-
-    while(j <= i)
-    {
-        cout << "Inputkan data ke-" << j << " :";
-        cin >> data;
-
-        P = alokasi_1303204141(data);
-        insertLast_1303204141(L,P);
-        j++;
-    }
-}

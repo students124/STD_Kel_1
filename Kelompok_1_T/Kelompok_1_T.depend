@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1639718248 source:d:\billy\school\telkom university\class documents\semseter 3\struktur data\tb\kelompok_1_t\menu.cpp
+	"Menu.h"
+
+1639718242 d:\billy\school\telkom university\class documents\semseter 3\struktur data\tb\kelompok_1_t\menu.h
+	"MLL.h"
+	<iostream>
+	<string>
+
+1638870692 d:\billy\school\telkom university\class documents\semseter 3\struktur data\tb\kelompok_1_t\mll.h
+	<iostream>
+	<string>
+
+1639718324 source:d:\billy\school\telkom university\class documents\semseter 3\struktur data\tb\kelompok_1_t\main.cpp
+	"MLL.h"
+	"Menu.h"
+

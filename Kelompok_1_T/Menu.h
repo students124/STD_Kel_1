@@ -9,6 +9,6 @@ using namespace std;
 
 
 int getOption_1303204141();
-void inputData_1303204141(ListDouble &L);
+
 
 #endif // MENU_H_INCLUDED
