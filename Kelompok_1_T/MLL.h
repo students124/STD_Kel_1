@@ -4,12 +4,14 @@
 #include <iostream>
 #include <string>
 
+
 using namespace std;
 
 #define info(P) (P)->info
 #define next(P) (P)->next
 #define nextClass(P) (P)->nextClass
 #define first(L) ((L).first)
+
 
 typedef struct elm_pengerajin *adr_pengerajin;
 typedef struct elm_furniture *adr_furniture;
@@ -64,5 +66,6 @@ void deleteAfter_1303204141(List_furniture &L, adr_furniture &prec, adr_furnitur
 void deleteAfter_1303204141(List_pengerajin &L, adr_pengerajin &prec, adr_pengerajin &P);
 void deleteLast_1303204141(List_furniture &L, adr_furniture &P);
 void deleteLast_1303204141(List_pengerajin &L, adr_pengerajin &P);
+adr_pengerajin find_1303204141(List_pengerajin L, string nama, int umur);
 
 #endif // MLL_H_INCLUDED

@@ -153,3 +153,4 @@ void deleteLast_1303204141(List_pengerajin &L, adr_pengerajin &P)
         P = Q;
     }
 }
+
