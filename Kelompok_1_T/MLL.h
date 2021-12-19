@@ -62,10 +62,12 @@ void insertFirst_1303204141(List_furniture &L, adr_furniture P);
 void insertFirst_1303204141(List_pengerajin &L, adr_pengerajin P);
 void insertLast_1303204141(List_furniture &L, adr_furniture P);
 void insertLast_1303204141(List_pengerajin &L, adr_pengerajin P);
-void deleteAfter_1303204141(List_furniture &L, adr_furniture &prec, adr_furniture &P);
-void deleteAfter_1303204141(List_pengerajin &L, adr_pengerajin &prec, adr_pengerajin &P);
+void deleteFirst_1303204141(List_furniture &L, adr_furniture &P);
+void deleteFirst_1303204141(List_pengerajin &L, adr_pengerajin &P);
+void deleteAfter_1303204141(adr_furniture &prec, adr_furniture &P);
+void deleteAfter_1303204141(adr_pengerajin &prec, adr_pengerajin &P);
 void deleteLast_1303204141(List_furniture &L, adr_furniture &P);
 void deleteLast_1303204141(List_pengerajin &L, adr_pengerajin &P);
-adr_pengerajin find_1303204141(List_pengerajin L, string nama, int umur);
+adr_pengerajin findPengerajin_1303204141(List_pengerajin L, string nama, int umur);
 
 #endif // MLL_H_INCLUDED

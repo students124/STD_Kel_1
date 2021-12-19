@@ -89,14 +89,28 @@ void insertLast_1303204141(List_pengerajin &L, adr_pengerajin P)
     }
 }
 
-void deleteAfter_1303204141(List_furniture &L, adr_furniture &prec, adr_furniture &P)
+void deleteFirst_1303204141(List_furniture &L, adr_furniture &P)
+{
+    P = first(L);
+    first(L) = next(P);
+    next(P) = NULL;
+}
+
+void deleteFirst_1303204141(List_pengerajin &L, adr_pengerajin &P)
+{
+    P = first(L);
+    first(L) = next(P);
+    next(P) = NULL;
+}
+
+void deleteAfter_1303204141(adr_furniture &prec, adr_furniture &P)
 {
     P = next(prec);
     next(prec) = next(P);
     next(P) = NULL;
 }
 
-void deleteAfter_1303204141(List_pengerajin &L, adr_pengerajin &prec, adr_pengerajin &P)
+void deleteAfter_1303204141(adr_pengerajin &prec, adr_pengerajin &P)
 {
     P = next(prec);
     next(prec) = next(P);
@@ -154,3 +168,24 @@ void deleteLast_1303204141(List_pengerajin &L, adr_pengerajin &P)
     }
 }
 
+adr_pengerajin findPengerajin_1303204141(List_pengerajin L, string nama, int umur)
+{
+    if(first(L) == NULL)
+    {
+        return NULL;
+    }else
+    {
+        adr_pengerajin P = first(L);
+
+        while(P != NULL)
+        {
+            if (info(P).nama == nama && info(P).umur == umur)
+            {
+                return P;
+            }
+            P = next(P);
+        }
+
+        return NULL;
+    }
+}
