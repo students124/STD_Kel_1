@@ -69,5 +69,6 @@ void deleteAfter_1303204141(adr_pengerajin &prec, adr_pengerajin &P);
 void deleteLast_1303204141(List_furniture &L, adr_furniture &P);
 void deleteLast_1303204141(List_pengerajin &L, adr_pengerajin &P);
 adr_pengerajin findPengerajin_1303204141(List_pengerajin L, string nama, int umur);
+adr_furniture findFurniture_1303204141(List_furniture L, string nama);
 
 #endif // MLL_H_INCLUDED

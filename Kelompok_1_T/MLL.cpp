@@ -189,3 +189,27 @@ adr_pengerajin findPengerajin_1303204141(List_pengerajin L, string nama, int umu
         return NULL;
     }
 }
+
+adr_furniture findFurniture_1303204141(List_furniture L, string nama)
+{
+    if (first(L) == NULL)
+    {
+        cout << "No List of furniture!" << endl;
+        return NULL;
+    }else
+    {
+        adr_furniture P = first(L);
+
+        while(P != NULL)
+        {
+            if (info(P).nama == nama)
+            {
+                return P;
+            }
+
+            P = next(P);
+        }
+
+        return NULL;
+    }
+}
