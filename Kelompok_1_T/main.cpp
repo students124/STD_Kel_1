@@ -1,21 +1,19 @@
 #include "MLL.h"
 #include "Menu.h"
 
-
-
-
 int main()
 {
     system("clear");
 
-    List_pengerajin L;
-    adr_pengerajin P;
+    List_pengerajin P;
+    List_furniture F;
+
     bool status;
 
 
     enum option
     {
-        FINISH = 0,MENAMBAH,MENAMPILKAN,MENGHAPUS,TP
+        FINISH = 0,CASE1,CASE2,CASE3,CASE4,CASE5,CASE6
     };
 
     int userOpt = getOption_1303204141();
@@ -25,17 +23,17 @@ int main()
     {
         switch (userOpt)
         {
-        case MENAMBAH:
+        case CASE1:
 
             break;
-        case MENAMPILKAN:
+        case CASE2:
             cout << "Menampilkan Seluruh Data" << endl << endl;
 
             break;
-        case TP:
+        case CASE3:
 
             break;
-        case MENGHAPUS:
+        case CASE4:
 
             break;
         default:

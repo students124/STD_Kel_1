@@ -2,11 +2,15 @@
 
 int getOption_1303204141()
 {
+    //function melakukan penerimaan instruksi user
+
     cout << "=======MENU========" << endl;
-    cout << "1. Menambahkan N data pengerajin baru" << endl;
+    cout << "1. Menambahkan Pengerajin Baru" << endl;
     cout << "2. Menampilkan data pengerajin x" << endl;
     cout << "3. Menghapus pengerajin tertentu" << endl;
     cout << "4. Mencari pengerajin x" << endl;
+    cout << "5. Menambahkan Furniture Pada Pengerajin X" << endl;
+    cout << "6. Menghapus Furniture pada Pengerajin X" << endl;
     cout << "0. Exit" << endl;
     cout << "===================" << endl;
     cout << endl;
@@ -22,6 +26,8 @@ int getOption_1303204141()
 
 void showPengerajinx_1303204141(List_pengerajin L, string nama,int umur)
 {
+    //function di bentuk sesuai kebutuhan Case studi no 1
+
     if(first(L) == NULL)
     {
         cout << "LIST EMPTY" << endl;
@@ -42,6 +48,8 @@ void showPengerajinx_1303204141(List_pengerajin L, string nama,int umur)
 
 void deletepengerajinTertentu_1303204141(List_pengerajin L, string nama, int umur)
 {
+    //function di bentuk sesuai kebutuhan Case studi no 2
+
     adr_pengerajin P = findPengerajin_1303204141(L,nama,umur);
 
     if(P == NULL)
@@ -71,6 +79,8 @@ void deletepengerajinTertentu_1303204141(List_pengerajin L, string nama, int umu
 
 void searchPengerajinTertentu_1303204141(List_pengerajin L, string nama, int umur)
 {
+    //function di bentuk sesuai kebutuhan Case studi no 3
+
     adr_pengerajin P = findPengerajin_1303204141(L,nama,umur);
 
     if (P == NULL)
@@ -85,6 +95,7 @@ void searchPengerajinTertentu_1303204141(List_pengerajin L, string nama, int umu
 
 void addFurnitureToPengerajin_1303204141(List_pengerajin &L,List_furniture &F ,string nama, int umur, string namaFurniture)
 {
+    //function di bentuk sesuai kebutuhan Case studi no 4
     adr_pengerajin P = findPengerajin_1303204141(L,nama,umur);
 
     if (P == NULL)
@@ -103,6 +114,8 @@ void addFurnitureToPengerajin_1303204141(List_pengerajin &L,List_furniture &F ,s
 
 void deleteFurnitureToPengerajin_1303204141(List_pengerajin &L,List_furniture &F ,string nama, int umur, string namaFurniture)
 {
+    //function di bentuk sesuai kebutuhan Case studi no 5
+
     adr_pengerajin P = findPengerajin_1303204141(L,nama,umur);
 
     if (P == NULL)
