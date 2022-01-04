@@ -3,17 +3,20 @@
 
 int main()
 {
-    system("clear");
+    system("cls");
 
     List_pengerajin P;
     List_furniture F;
+
+    createList_1303204141(P);
+    createList_1303204141(F);
 
     bool status;
 
 
     enum option
     {
-        FINISH = 0,CASE1,CASE2,CASE3,CASE4,CASE5,CASE6
+        FINISH = 0,CST1,CST2,CST3,CST4,CST5,CST6
     };
 
     int userOpt = getOption_1303204141();
@@ -23,22 +26,69 @@ int main()
     {
         switch (userOpt)
         {
-        case CASE1:
+        case CST1:
+            {
+                int umur;
+                string nama;
 
-            break;
-        case CASE2:
-            cout << "Menampilkan Seluruh Data" << endl << endl;
+                cout << "Nama Pengerajin : ";
+                cin >> nama;
 
-            break;
-        case CASE3:
+                cout << "Umur Pengerajin : ";
+                cin >> umur;
 
-            break;
-        case CASE4:
+                adr_pengerajin Q = createElement_1303204141(nama,umur);
+                insertLast_1303204141(P,Q);
+                break;
+            }
 
-            break;
+        case CST2:
+            {
+                string nama;
+                int umur;
+
+                cout << "Nama Pengerajin yang di cari : ";
+                cin >> nama;
+
+                cout << "Umur Pengerajin yang di cari : ";
+                cin >> umur;
+
+                showPengerajinx_1303204141(P,nama,umur);
+
+                break;
+            }
+        case CST3:
+            {
+                string nama;
+                int umur;
+
+                cout << "Nama Pengerajin yang akan dihapus : ";
+                cin >> nama;
+
+                cout << "Umur Pengerajin yang akan dihapus : ";
+                cin >> umur;
+
+                deletepengerajinTertentu_1303204141(P,nama,umur);
+
+                break;
+            }
+        case CST4:
+            {
+                break;
+            }
+        case CST5:
+            {
+                break;
+            }
+        case CST6:
+            {
+                break;
+            }
         default:
-            cout << "Pilihan Tidak ditemukan !!!" << endl;
-            break;
+            {
+                cout << "Pilihan Tidak ditemukan !!!" << endl;
+                break;
+            }
         }
         cout << endl;
 
@@ -48,7 +98,7 @@ int main()
 
 		cin >> is_continue;
 		if ((is_continue == 'y') | (is_continue == 'Y')){
-            system("clear");
+            system("cls");
 			userOpt = getOption_1303204141();
 		}else if ((is_continue == 'n') | (is_continue == 'N'))
 		{
