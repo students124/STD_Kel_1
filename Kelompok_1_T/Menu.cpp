@@ -11,6 +11,8 @@ int getOption_1303204141()
     cout << "4. Mencari pengerajin x" << endl;
     cout << "5. Menambahkan Furniture Pada Pengerajin X" << endl;
     cout << "6. Menghapus Furniture pada Pengerajin X" << endl;
+    cout << "7. Membuat Relasi antara Pengrajin X dan Furniture Y" << endl;
+    cout << "8. Menghapus Relasi antara Pengrajin X dan Furniture Y" << endl;
     cout << "0. Exit" << endl;
     cout << "===================" << endl;
     cout << endl;
@@ -150,4 +152,50 @@ void deleteFurnitureToPengerajin_1303204141(List_pengerajin &L,List_furniture &F
         }
     }
 }
+
+void connectingPengrajinToFurniture_1303204126(List_pengerajin &L,List_furniture &F,string nama,int umur,string namaFurniture){
+
+    //Prosedur dibentuk sesuai dari case no 9
+
+
+    adr_pengerajin P = findPengerajin_1303204141(L,nama,umur);
+
+    if(P == NULL){
+        cout<<"Nama Pengrajin tidak ada"<<endl;
+
+    }else{
+
+        //Kita anggap furniture tidak ada di dalam list
+        createList_1303204141(F);
+        insertLast_1303204141(F,P);
+    }
+
+}
+
+void disconnectingPengrajinToFurniture_1303204126(List_pengerajin &L, List_furniture &F,string nama,int umur,string namaFurniture){
+
+    //Prosedur dibentuk sesuai dari case no 10
+
+    adr_pengerajin P = findPengerajin_1303204141(L,nama,umur);
+
+    if(P == NULL){
+        cout<<"Nama Pengrajin tidak ada"<<endl;
+    }else{
+        if(first(F) == Q){
+            deleteFirst_1303204141(F,Q);
+        }else if(next(Q) == NULL){
+            deleteLast_1303204141(F,Q);
+        }else{
+            adr_furniture R = first(F);
+                while(R != Q){
+                    R = next(R);
+                }
+
+                deleteAfter_1303204141(R,Q);
+            }
+    }
+}
+
+
+
 //BILLLY N BAGAS

@@ -1,5 +1,5 @@
-#include "MLL.h"
 #include "Menu.h"
+#include "MLL.h"
 
 int main()
 {
@@ -98,7 +98,7 @@ int main()
 
 		cin >> is_continue;
 		if ((is_continue == 'y') | (is_continue == 'Y')){
-            system("cls");
+            //system("cls");
 			userOpt = getOption_1303204141();
 		}else if ((is_continue == 'n') | (is_continue == 'N'))
 		{
