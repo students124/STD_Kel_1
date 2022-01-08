@@ -150,4 +150,39 @@ void deleteFurnitureToPengerajin_1303204141(List_pengerajin &L,List_furniture &F
         }
     }
 }
+
+void connectingPengrajinToFurniture_1303204126(List_pengerajin &L,List_furniture &F,string nama,int umur,string namaFurniture){
+
+    //Prosedur dibentuk sesuai dari case no 9
+
+
+    adr_pengerajin P = findPengerajin_1303204141(L,nama,umur);
+
+    if(P == NULL){
+        cout<<"Nama Pengrajin tidak ada"<<endl;
+
+    }else{
+
+        //Kita anggap furniture tidak ada di dalam list
+        createList_1303204141(F);
+        insertLast_1303204141(F,P);
+    }
+
+}
+
+void disconnectingPengrajinToFurniture_1303204126(List_pengerajin &L, List_furniture &F,string nama,int umur,string namaFurniture){
+
+    //Prosedur dibentuk sesuai dari case no 10
+
+    adr_pengerajin P = findPengerajin_1303204141(L,nama,umur);
+
+    if(P == NULL){
+        cout<<"Nama Pengrajin tidak ada"<<endl;
+    }else{
+
+    }
+}
+
+
+
 //BILLLY N BAGAS
