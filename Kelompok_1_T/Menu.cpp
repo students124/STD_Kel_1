@@ -11,6 +11,12 @@ int getOption_1303204141()
     cout << "4. Mencari pengerajin x" << endl;
     cout << "5. Menambahkan Furniture Pada Pengerajin X" << endl;
     cout << "6. Menghapus Furniture pada Pengerajin X" << endl;
+    cout << "7. Menampilkan seluruh furniture yang dibuat oleh pengrajin X" << endl;
+    cout << "8. Mencari furniture Y yang dibuat oleh pengrajin X" << endl;
+    cout << "9. Membuat relasi antara pengrajin X dan furniture Y" << endl;
+    cout << "10.Menghapus relasi antara pengrajin dan furniture Y" << endl;
+    cout << "11.Menampilkan data pengrajin yang paling banyak membuat furniture X" << endl;
+    cout << "12.Mengubah data furniture X menjadi P dan tampilkan perubahannya" << endl;
     cout << "0. Exit" << endl;
     cout << "===================" << endl;
     cout << endl;
@@ -150,4 +156,141 @@ void deleteFurnitureToPengerajin_1303204141(List_pengerajin &L,List_furniture &F
         }
     }
 }
-//BILLLY N BAGAS
+
+void showAllFurnitureByPengerajinX(List_pengerajin &L,List_furniture &F,string nama,int umur)
+{
+    //function by case studi no 7
+
+    adr_pengerajin P = findPengerajin_1303204141(L,nama,umur);
+
+    if(P == NULL)
+    {
+        cout << "Pengerajin tidak ditemukan" << endl;
+    }else
+    {
+        adr_furniture Q = first(F);
+
+        cout << "Pengerajin " << info(P).nama << " telah membuat furniture : ";
+
+        while(Q != NULL)
+        {
+            if(info(nextClass(Q)).nama == info(P).nama)
+            {
+                cout << info(Q).nama << ",";
+            }
+            Q = next(Q);
+        }
+        cout << "." << endl;
+    }
+}
+
+void findFurnitureToPengerajin_1303204141(List_pengerajin &L,List_furniture &F ,string nama, int umur, string namaFurniture)
+{
+    adr_furniture P = findFurniture_1303204141(F,namaFurniture);
+    adr_pengerajin Q = findPengerajin_1303204141(L,nama,umur);
+
+    if((P == NULL) && (Q == NULL))
+    {
+        cout << "NO DATA AVAILABLE" << endl;
+    }else
+    {
+        if(nextClass(P) == Q)
+        {
+            cout << "DATA FOUND" << endl << endl;
+
+            cout << info(Q).nama << " memiliki : " << info(P).nama << endl;
+        }else
+        {
+            cout << "Furniture not found" << endl;
+        }
+    }
+}
+
+
+void connectingPengrajinToFurniture_1303204126(List_pengerajin &L,List_furniture &F,string nama,int umur,string namaFurniture){
+
+    //Prosedur dibentuk sesuai dari case no 9
+
+
+    adr_pengerajin P = findPengerajin_1303204141(L,nama,umur);
+
+    if(P == NULL){
+        cout<<"Nama Pengrajin tidak ada"<<endl;
+
+    }else{
+
+        //Kita anggap furniture tidak ada di dalam list
+        insertLast_1303204141(L,P);
+    }
+
+}
+
+void disconnectingPengrajinToFurniture_1303204126(List_pengerajin &L, List_furniture &F,string nama,int umur,string namaFurniture){
+
+    //Prosedur dibentuk sesuai dari case no 10
+
+    adr_pengerajin P = findPengerajin_1303204141(L,nama,umur);
+    adr_furniture Q = findFurniture_1303204141(F,namaFurniture);
+
+    if(P == NULL && Q == NULL){
+        cout<<"Nama Pengrajin tidak ada"<<endl;
+    }else{
+        if(first(F) == Q){
+            deleteFirst_1303204141(F,Q);
+        }else if(next(P) == NULL){
+            deleteLast_1303204141(F,Q);
+        }else{
+            adr_furniture R = first(F);
+                while(R != Q){
+                    R = next(R);
+                }
+
+                deleteAfter_1303204141(R,Q);
+
+            }
+    }
+}
+
+
+void show(List_furniture &F, string namaFurniture)
+{
+    int i = 0;
+    if(first(F) == NULL)
+    {
+        cout << "LIST KOSONG" << endl;
+    }else
+    {
+        adr_furniture P = first(F);
+
+        while(P != NULL)
+        {
+            if((info(P).nama == namaFurniture) && (nextClass(P) != NULL))
+            {
+                i++;
+            }
+            P = next(P);
+        }
+
+        cout << "Banyaknya pengerajin yang membuat " << namaFurniture << " sama dengan : " << i << endl;
+    }
+}
+
+void UbahData_1303204126(List_furniture &F, string namaFurnitureAwal, string namaFurnitureAkhir){
+
+
+    adr_furniture P = findFurniture_1303204141(F,namaFurnitureAwal);
+    if(P == NULL){
+        cout<<"Data Tidak Ada, tidak ada perubahan"<<endl;
+    }else{
+        adr_pengerajin Q = nextClass(P);
+        adr_furniture prec = first(F);
+        while(prec != P){
+            prec = next(prec);
+        }
+        deleteAfter_1303204141(prec, P);
+        adr_furniture R = createElement_1303204141(namaFurnitureAkhir);
+        nextClass(R) = Q;
+        insertAfter_1303204126(prec,R);
+        cout<<"Mengganti furniture X dengan furniture P"<<endl;
+    }
+}

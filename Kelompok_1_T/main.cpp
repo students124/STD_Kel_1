@@ -16,7 +16,7 @@ int main()
 
     enum option
     {
-        FINISH = 0,CST1,CST2,CST3,CST4,CST5,CST6
+        FINISH = 0,CST1,CST2,CST3,CST4,CST5,CST6,CST7,CST8,CST9,CST10,CST11,CST12
     };
 
     int userOpt = getOption_1303204141();
@@ -74,14 +74,146 @@ int main()
             }
         case CST4:
             {
+                string nama;
+                int umur;
+
+                cout << "Nama Pengerajin yang akan dihapus : ";
+                cin >> nama;
+
+                cout << "Umur Pengerajin yang akan dihapus : ";
+                cin >> umur;
+
+                searchPengerajinTertentu_1303204141(P,nama,umur);
+
                 break;
             }
         case CST5:
             {
+                string nama,namaFurniture;
+                int umur;
+
+                cout << "Nama Pengerajin yang akan di add furniturenya : ";
+                cin >> nama;
+
+                cout << "Umur Pengerajin yang akan di add furniturenya : ";
+                cin >> umur;
+
+                cout << "nama Furniture yang ingin ditambahkan : ";
+                cin >> namaFurniture;
+
+                addFurnitureToPengerajin_1303204141(P,F,nama,umur,namaFurniture);
+
                 break;
             }
         case CST6:
             {
+                string nama,namaFurniture;
+                int umur;
+
+                cout << "Nama Pengerajin yang akan di add furniturenya : ";
+                cin >> nama;
+
+                cout << "Umur Pengerajin yang akan di add furniturenya : ";
+                cin >> umur;
+
+                cout << "nama Furniture yang ingin ditambahkan : ";
+                cin >> namaFurniture;
+
+                deleteFurnitureToPengerajin_1303204141(P,F,nama,umur,namaFurniture);
+
+                break;
+            }
+        case CST7:
+            {
+                string nama;
+                int umur;
+
+                cout << "Nama Pengerajin yang akan ditampilkan : ";
+                cin >> nama;
+
+                cout << "Umur Pengerajin yang akan ditampilkan : ";
+                cin >> umur;
+
+                showAllFurnitureByPengerajinX(P,F,nama,umur);
+
+                break;
+            }
+        case CST8:
+            {
+                string nama,namaFurniture;
+                int umur;
+
+                cout << "nama Furniture yang ingin dicari : ";
+                cin >> namaFurniture;
+
+                cout << "Nama Pengerajin yang akan dicari : ";
+                cin >> nama;
+
+                cout << "Umur Pengerajin yang akan dicari: ";
+                cin >> umur;
+
+                break;
+            }
+        case CST9:
+            {
+                string nama,namaFurniture;
+                int umur;
+
+                cout << "Nama Pengerajin yang akan diconnect : ";
+                cin >> nama;
+
+                cout << "Umur Pengerajin yang akan diconnect : ";
+                cin >> umur;
+
+                cout << "nama Furniture yang ingin diconnect : ";
+                cin >> namaFurniture;
+
+                cout << "Connecting all furniture and pengerajin" << endl;
+
+                connectingPengrajinToFurniture_1303204126(P,F,nama,umur,namaFurniture);
+                break;
+            }
+        case CST10:
+            {
+                string nama,namaFurniture;
+                int umur;
+
+                cout << "Nama Pengerajin yang akan disconnect : ";
+                cin >> nama;
+
+                cout << "Umur Pengerajin yang akan disconnect : ";
+                cin >> umur;
+
+                cout << "nama Furniture yang ingin disconnect : ";
+                cin >> namaFurniture;
+
+                cout << "Disconnecting all furniture and pengerajin" << endl;
+
+                disconnectingPengrajinToFurniture_1303204126(P,F,nama,umur,namaFurniture);
+                break;
+
+            }
+        case CST11:
+            {
+                string namaFurniture;
+
+                cout << "nama Furniture : ";
+                cin >> namaFurniture;
+
+                show(F,namaFurniture);
+                break;
+            }
+        case CST12:
+            {
+                string namaFurnitureAwal, namaFurnitureAkhir;
+
+                cout << "nama Furniture Awal : ";
+                cin >> namaFurnitureAwal;
+
+                cout << "Nama Furniture Akhir : ";
+                cin >> namaFurnitureAkhir;
+
+                UbahData_1303204126(F,namaFurnitureAwal,namaFurnitureAkhir);
                 break;
             }
         default:

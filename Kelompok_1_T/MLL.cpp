@@ -143,6 +143,10 @@ void deleteLast_1303204141(List_furniture &L, adr_furniture &P)
     }
 }
 
+void insertAfter_1303204126(adr_furniture &prec, adr_furniture &P){
+    next(prec) = P;
+}
+
 void deleteLast_1303204141(List_pengerajin &L, adr_pengerajin &P)
 {
     if(first(L) == NULL)

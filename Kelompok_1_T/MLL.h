@@ -60,6 +60,7 @@ adr_furniture createElement_1303204141(string nama);
 adr_pengerajin createElement_1303204141(string nama, int umur);
 void insertFirst_1303204141(List_furniture &L, adr_furniture P);
 void insertFirst_1303204141(List_pengerajin &L, adr_pengerajin P);
+void insertAfter_1303204126(adr_furniture &prec, adr_furniture &P);
 void insertLast_1303204141(List_furniture &L, adr_furniture P);
 void insertLast_1303204141(List_pengerajin &L, adr_pengerajin P);
 void deleteFirst_1303204141(List_furniture &L, adr_furniture &P);
